@@ -15,6 +15,7 @@
     end
   else
     Thread.current[:upgrade_state] = :impossible
+    Thread.current[:last_upgrade_change] = nil
   end
 
 = link_to(url, id: "subscribe-link", class: (Thread.current[:upgrade_state] == :available ? :valid : :invalid)) do

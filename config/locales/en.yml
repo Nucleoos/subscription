@@ -1,9 +1,9 @@
 en: &en
   plugins:
     subscription:
-      upgrade_available: "Available"
-      upgrade_no_longer_available: "To renew"
-      upgrade_no_possible_updgrade: "Subscribe"
+      upgrade_available: "Subscription validated"
+      upgrade_no_longer_available: "Subscription to renew"
+      no_possible_upgrade: "No subscription"
   snippets: 
     subscription-state: "Update subscription"
 

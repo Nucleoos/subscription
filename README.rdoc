@@ -1,0 +1,3 @@
+= Subscription
+
+Ekylibre ERP plugin to check update state on SaaS installation on Debian-like OS for ekylibre-erp package.

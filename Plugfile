@@ -1,0 +1,6 @@
+author "Brice Texier"
+version "0.0.1"
+
+add_snippet "state" # , title: false
+
+add_theme_stylesheet "tekyla", "main"

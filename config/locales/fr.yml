@@ -1,0 +1,10 @@
+fr: &fr
+  plugins:
+    subscription:
+      upgrade_available: "Disponible"
+      upgrade_no_longer_available: "À renouveler"
+      upgrade_no_possible_updgrade: "S'abonner"
+  snippets: 
+    subscription-state: "Mise à jour"
+
+fra: *fr

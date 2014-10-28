@@ -1,0 +1,29 @@
+#subscription-state {
+  .snippet-content {
+    #subscribe-link {
+      display: block;
+      @include text-align(center);
+      font-weight: bold;
+      background-color: rgba(#FFF, 0.7);
+      padding: $default-gap;
+      i {
+        @include is-icon;
+        @include use-icon(minus-circle);
+      }
+      &, * {
+        color: $invalid-color;
+      }
+      &.valid {
+        &, * {
+          color: $success-color;
+        }
+        i {
+          @include use-icon(check);
+        }
+      }
+      &.caution {
+        color: $caution-color;
+      }
+    }
+  }
+}

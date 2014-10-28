@@ -1,0 +1,10 @@
+en: &en
+  plugins:
+    subscription:
+      upgrade_available: "Available"
+      upgrade_no_longer_available: "To renew"
+      upgrade_no_possible_updgrade: "Subscribe"
+  snippets: 
+    subscription-state: "Update subscription"
+
+eng: *en

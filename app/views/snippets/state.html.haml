@@ -1,0 +1,29 @@
+:ruby
+  url = "https://ekylibre.com"
+  file = Pathname.new('/etc/ekylibre/upgrade/ekylibre-cert.pub')
+  if file.exist?
+    if Thread.current[:last_upgrade_change].blank? or Thread.current[:last_upgrade_change] != file.mtime or Thread.current[:upgrade_state].blank?
+      if certificate = YAML.load(`ssh-keygen -L -f #{file}`.gsub('        ', '  ')).values.first rescue nil
+        period = certificate["Valid"].split(/\s+/)
+        period = Time.new(period[1])..Time.new(period[3])
+        now = Time.now
+        Thread.current[:upgrade_state] = (period.first <= now and now <= period.last ? :available : :unavailable)
+      else
+        Thread.current[:upgrade_state] = :undefined
+      end
+      Thread.current[:last_upgrade_change] = file.mtime
+    end
+  else
+    Thread.current[:upgrade_state] = :impossible
+  end
+
+= link_to(url, id: "subscribe-link", class: (Thread.current[:upgrade_state] == :available ? :valid : :invalid)) do
+  %i
+  - if Thread.current[:upgrade_state] == :available
+    = "plugins.subscription.upgrade_available".t
+  - elsif Thread.current[:upgrade_state] == :undefined
+    = "plugins.subscription.undefined_upgrade_state".t
+  - elsif Thread.current[:upgrade_state] == :impossible
+    = "plugins.subscription.no_possible_upgrade".t
+  - else
+    = "plugins.subscription.upgrade_no_longer_available".t

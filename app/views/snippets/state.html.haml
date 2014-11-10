@@ -1,5 +1,5 @@
 :ruby
-  url = "https://ekylibre.com"
+  url = "http://ekylibre.com"
   file = Pathname.new('/etc/ekylibre/upgrade/ekylibre-cert.pub')
   if file.exist?
     if Thread.current[:last_upgrade_change].blank? or Thread.current[:last_upgrade_change] != file.mtime or Thread.current[:upgrade_state].blank?

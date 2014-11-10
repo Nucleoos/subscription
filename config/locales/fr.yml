@@ -1,10 +1,10 @@
 fr: &fr
   plugins:
     subscription:
-      upgrade_available: "Abonnement validé"
+      upgrade_available: "Abonnement valide"
       upgrade_no_longer_available: "Abonnement à renouveler"
       no_possible_upgrade: "Aucun abonnement"
   snippets: 
-    subscription-state: "Mise à jour"
+    subscription-state: "Souscription"
 
 fra: *fr

@@ -4,5 +4,3 @@ version "0.0.1"
 add_snippet "state" # , title: false
 
 add_theme_stylesheet "tekyla", "main"
-add_theme_stylesheet "margarita", "main"
-add_theme_stylesheet "tekyla-sunrise", "main"
